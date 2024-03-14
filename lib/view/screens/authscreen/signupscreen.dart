@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:urban_culture/view/screens/authscreen/login.dart';
 import 'package:urban_culture/view/utilities/custom_colors.dart';
 import 'package:urban_culture/view/utilities/customtext.dart';
 import 'package:urban_culture/view/utilities/textformfiled.dart';
@@ -15,7 +17,7 @@ class signup_screen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-                height: 25.h,
+                height: 15.h,
                 width: 100.w,
                 decoration: BoxDecoration(
                     color: Colors.pink,
@@ -29,18 +31,19 @@ class signup_screen extends StatelessWidget {
                 wei: FontWeight.bold,
                 max: 1),
             SizedBox(
-              height: 2.h,
-            ),
-            Padding(
-              padding: EdgeInsets.all(15),
-              child: textformfield_reause(
-                  hint: "  Enter Email  address", label: "Email"),
-            ),
-            SizedBox(
               height: 1.h,
             ),
             Padding(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
+              child: textformfield_reause(hint: "  Enter Name", label: "Name"),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: textformfield_reause(
+                  hint: "  Enter Email address", label: "Email"),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15),
               child: textformfield_reause(
                   hint: "  Enter password", label: "Password"),
             ),
@@ -57,7 +60,7 @@ class signup_screen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(1.h)),
                 child: Center(
                   child: all_text(
-                      txt: "Login",
+                      txt: "Signup",
                       col: wh,
                       siz: 12.sp,
                       wei: FontWeight.bold,
@@ -70,21 +73,26 @@ class signup_screen extends StatelessWidget {
             ),
             all_text(
                 txt: "or", col: bl, siz: 12.sp, wei: FontWeight.bold, max: 1),
-            Padding(
-              padding: const EdgeInsets.all(13.0),
-              child: Container(
-                height: 6.h,
-                width: 100.w,
-                decoration: BoxDecoration(
-                    color: Colors.pink,
-                    borderRadius: BorderRadius.circular(1.h)),
-                child: Center(
-                  child: all_text(
-                      txt: "Signup",
-                      col: wh,
-                      siz: 12.sp,
-                      wei: FontWeight.bold,
-                      max: 1),
+            InkWell(
+              onTap: () {
+                Get.to(() => loginscreen());
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(13.0),
+                child: Container(
+                  height: 6.h,
+                  width: 100.w,
+                  decoration: BoxDecoration(
+                      color: Colors.pink,
+                      borderRadius: BorderRadius.circular(1.h)),
+                  child: Center(
+                    child: all_text(
+                        txt: "Login",
+                        col: wh,
+                        siz: 12.sp,
+                        wei: FontWeight.bold,
+                        max: 1),
+                  ),
                 ),
               ),
             ),

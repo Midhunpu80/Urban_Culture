@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:urban_culture/view/screens/authscreen/signupscreen.dart';
 import 'package:urban_culture/view/utilities/custom_colors.dart';
 import 'package:urban_culture/view/utilities/customtext.dart';
 import 'package:urban_culture/view/utilities/textformfiled.dart';
@@ -47,21 +49,25 @@ class loginscreen extends StatelessWidget {
             SizedBox(
               height: 5.h,
             ),
-            Padding(
-              padding: const EdgeInsets.all(13.0),
-              child: Container(
-                height: 6.h,
-                width: 100.w,
-                decoration: BoxDecoration(
-                    color: Colors.pink,
-                    borderRadius: BorderRadius.circular(1.h)),
-                child: Center(
-                  child: all_text(
-                      txt: "Login",
-                      col: wh,
-                      siz: 12.sp,
-                      wei: FontWeight.bold,
-                      max: 1),
+            InkWell(
+              onTap: () {
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(13.0),
+                child: Container(
+                  height: 6.h,
+                  width: 100.w,
+                  decoration: BoxDecoration(
+                      color: Colors.pink,
+                      borderRadius: BorderRadius.circular(1.h)),
+                  child: Center(
+                    child: all_text(
+                        txt: "Login",
+                        col: wh,
+                        siz: 12.sp,
+                        wei: FontWeight.bold,
+                        max: 1),
+                  ),
                 ),
               ),
             ),
@@ -70,26 +76,36 @@ class loginscreen extends StatelessWidget {
             ),
             all_text(
                 txt: "or", col: bl, siz: 12.sp, wei: FontWeight.bold, max: 1),
-            Padding(
-              padding: const EdgeInsets.all(13.0),
-              child: Container(
-                height: 6.h,
-                width: 100.w,
-                decoration: BoxDecoration(
-                    color: Colors.pink,
-                    borderRadius: BorderRadius.circular(1.h)),
-                child: Center(
-                  child: all_text(
-                      txt: "Signup",
-                      col: wh,
-                      siz: 12.sp,
-                      wei: FontWeight.bold,
-                      max: 1),
+            InkWell(
+              onTap: (){
+                                Get.to(() => signup_screen());
+
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(13.0),
+                child: Container(
+                  height: 6.h,
+                  width: 100.w,
+                  decoration: BoxDecoration(
+                      color: Colors.pink,
+                      borderRadius: BorderRadius.circular(1.h)),
+                  child: Center(
+                    child: all_text(
+                        txt: "Signup",
+                        col: wh,
+                        siz: 12.sp,
+                        wei: FontWeight.bold,
+                        max: 1),
+                  ),
                 ),
               ),
             ),
             all_text(
-                txt: "if you dont have any account signup ?", col: bl, siz: 11.sp, wei: FontWeight.bold, max: 1),
+                txt: "if you dont have any account signup ?",
+                col: bl,
+                siz: 11.sp,
+                wei: FontWeight.bold,
+                max: 1),
           ],
         ),
       ),
